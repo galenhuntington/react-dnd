@@ -649,9 +649,10 @@ export class HTML5BackendImpl implements Backend {
 
 	public handleTopDropCapture = (e: DragEvent): void => {
 		this.dropTargetIds = []
+		e.preventDefault()
 
 		if (this.isDraggingNativeItem()) {
-			e.preventDefault()
+			// e.preventDefault()
 			this.currentNativeSource?.loadDataTransfer(e.dataTransfer)
 		}
 
